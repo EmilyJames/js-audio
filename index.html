@@ -13,16 +13,22 @@
 
 	<script>
 
-
+		// invoke the function init
 		init();
 
 
+		// create new object for the Audio and add its source
 		var createAudio = function(){
+			// window added to make it global
 			window.newAudio = new Audio()
 			newAudio.src = 'frigia.mp3';
 		} ();
+		// ^^ self invoking function expression ^^
 
 
+
+		// init function for adding function declarations to buttons 
+		// - initialises dom events
 		function init(){
 			var playButton = document.getElementById("play");
 			playButton.addEventListener("click", playAudio, false);
@@ -32,10 +38,13 @@
 		}
 
 
+		// play audio
 		function playAudio() {
 			newAudio.play();
 		}
 
+
+		// pause audio 
 		function pauseAudio() {
 			newAudio.pause(); 
 		}
